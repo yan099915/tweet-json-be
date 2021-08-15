@@ -14,7 +14,7 @@ app.use(express.json());
 app.listen(port, () => {
   console.log(`This app is listening at http://localhost:${port}`);
 });
-
+app.get("/", (req, res) => res.send("<h1>Tweet to json API</h1>"));
 app.post("/app", async (req, res) => {
   let { url, count } = req.body
   let split = url.split("/")
