@@ -12,6 +12,7 @@ Node.js-powered.
 - Select tweets count
 
 ## Use
+- visit https://cartenz-fe.herokuapp.com/
 - Enter specific user profile link
 - Select Tweets count 
 - Search
