@@ -5,14 +5,12 @@ const cors = require('cors');
 require("dotenv").config();
 const app = express();
 
-const port = 3001;
-
 app.use(cors())
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 app.listen(port, () => {
-  console.log(`This app is listening at http://localhost:${port}`);
+  console.log(`This app is listening at http://localhost:${process.env.PORT}`);
 });
 app.get("/", (req, res) => res.send("<h1>Tweet to json API</h1>"));
 app.post("/app", async (req, res) => {
