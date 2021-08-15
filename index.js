@@ -3,14 +3,15 @@ const express = require("express");
 const fetch = require("node-fetch");
 const cors = require('cors');
 require("dotenv").config();
-const app = express();
 
+const { TOKEN, PORT } = process.env;
+const app = express();
 app.use(cors())
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-app.listen(port, () => {
-  console.log(`This app is listening at http://localhost:${process.env.PORT}`);
+app.listen(PORT, () => {
+  console.log(`This app is listening at http://localhost:${PORT}`);
 });
 app.get("/", (req, res) => res.send("<h1>Tweet to json API</h1>"));
 app.post("/app", async (req, res) => {
@@ -24,7 +25,7 @@ app.post("/app", async (req, res) => {
     {
       method: "GET",
       headers: {
-        Authorization: `Bearer ${process.env.TOKEN}`
+        Authorization: `Bearer ${TOKEN}`
       },
     }
   )
